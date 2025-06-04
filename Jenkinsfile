@@ -9,7 +9,7 @@ pipeline{
     stages {
         stage('clone Repo') {
             steps {
-                git 'https://github.com/anantlaghane/My_Portfolio.git'
+                git branch: 'main', url: 'https://github.com/anantlaghane/My_Portfolio.git'
             }
         }
 
