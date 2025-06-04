@@ -13,6 +13,13 @@ pipeline{
             }
         }
 
+        stage('setup Docker Buildx') {
+            steps {
+                sh 'chmod +x scripts/setup_buildx.sh'
+                sh './scripts/setup_buildx.sh'            
+            }
+        }
+
         stage('Build Docker Image') {
             steps {
                 sh "docker build -t $Docker_IMAGE . "
