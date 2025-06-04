@@ -9,9 +9,9 @@ COPY . .
 
 RUN npm run build 
 
-FROM nginx:apline
+FROM nginx:alpine
 
-COPY --from=build /app/build/usr/shere/nginx/html
+COPY --from=build /app/build /usr/shere/nginx/html
 
 EXPOSE 80
 
